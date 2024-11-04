@@ -50,3 +50,9 @@ sudo apt update
 ```
 sudo apt install vault
 ```
+
+**Check vault installation**
+
+```
+vault --version
+```
