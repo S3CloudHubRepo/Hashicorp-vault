@@ -28,6 +28,7 @@ To start Vault in Development Mode, open a terminal where Vault is installed and
 
 ```bash
 vault server -dev
+```
 
 
 This command starts Vault in Development Mode. You’ll see a message indicating that Development Mode should not be used in production.
