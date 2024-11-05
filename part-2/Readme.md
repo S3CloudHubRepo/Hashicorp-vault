@@ -1,6 +1,5 @@
 Here's a `README.md` file that captures the essentials from the script for easy reference:
 
-```markdown
 # Getting Started with HashiCorp Vault on Ubuntu
 
 This guide walks through the steps to start and stop HashiCorp Vault on Ubuntu, highlighting the key components and commands needed for development mode. 
@@ -29,7 +28,7 @@ To start Vault in Development Mode, open a terminal where Vault is installed and
 
 ```bash
 vault server -dev
-```
+
 
 This command starts Vault in Development Mode. You’ll see a message indicating that Development Mode should not be used in production.
 
