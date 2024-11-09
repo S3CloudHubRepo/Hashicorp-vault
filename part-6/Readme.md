@@ -54,9 +54,9 @@ vault auth enable github
 ### Step 3: Configuring GitHub Authentication in Vault
 Map your GitHub organization and team with Vault policies.
 
-#### Organization Mapping:
+#### Organization Create:
 ```bash
-vault write auth/github/orgs/YOUR_ORG_NAME
+ vault write auth/github/config organization=vault-demo-s3cloudhub
 ```
 
 #### Team Mapping:
