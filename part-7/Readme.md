@@ -29,6 +29,11 @@ path "secret/data/foo" {
 EOF
 ```
 End this input with `EOF`.
+Then run 
+```hcl
+vault policy list
+```
+for checking our policy created or not
 
 ### Section 3: Reading Vault Policy Details
 ```
