@@ -45,14 +45,22 @@ $ vault policy read my-policy
 $ vault policy delete my-policy
 ```
 
-### Section 6: Attaching a Token to a Policy
+### Section 5: Attaching a Token to a Policy
 ```
 $ export VAULT_TOKEN="$(vault token create -field token -policy=my-policy)"
 ```
 
-### Section 5: Storing Credentials Using Your Policy
+### Section 6: Storing Credentials Using Your Policy
 ```
 $ vault kv put -mount=secret creds password="my-long-password"
+```
+Now let's enable the approle
+```hcl
+vault auth enable approle
+```
+And verify with 
+```hcl
+vault auth list
 ```
 
 ### Section 7: Associating Auth Method with Policy
@@ -74,6 +82,11 @@ export ROLE_ID="$(vault read -field=role_id auth/approle/role/my-role/role-id)"
 Generate Secret ID:
 ```
 export SECRET_ID="$(vault write -f -field=secret_id auth/approle/role/my-role/secret-id)"
+```
+
+although right so now we have generated the role ID and the secret ID the next thing which we are gonna do we are just gonna perform some or we are just going to write some configuration using those role ID and the secret ID so this is the command which we are going to run 
+```
+vault write auth/approle/login role_id="$ROLE_ID" secret_id="$SECRET_ID"
 ```
 
 ## Conclusion
