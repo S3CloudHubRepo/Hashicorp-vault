@@ -7,12 +7,12 @@ This README provides a reference for the commands used in the tutorial on managi
 
 ### Section 1: Listing Vault Policies
 ```
-$ vault policy list
+vault policy list
 ```
 
 ### Section 2: Writing Your Custom Policy
 ```
-$ vault policy write my-policy -
+vault policy write my-policy -
 ```
 Insert the following HCL definitions:
 ```hcl
@@ -37,22 +37,22 @@ for checking our policy created or not
 
 ### Section 3: Reading Vault Policy Details
 ```
-$ vault policy read my-policy
+vault policy read my-policy
 ```
 
 ### Section 4: Deleting a Vault Policy
 ```
-$ vault policy delete my-policy
+vault policy delete my-policy
 ```
 
 ### Section 5: Attaching a Token to a Policy
 ```
-$ export VAULT_TOKEN="$(vault token create -field token -policy=my-policy)"
+export VAULT_TOKEN="$(vault token create -field token -policy=my-policy)"
 ```
 
 ### Section 6: Storing Credentials Using Your Policy
 ```
-$ vault kv put -mount=secret creds password="my-long-password"
+vault kv put -mount=secret creds password="my-long-password"
 ```
 Now let's enable the approle
 ```hcl
@@ -65,7 +65,7 @@ vault auth list
 
 ### Section 7: Associating Auth Method with Policy
 ```
-$ vault write auth/approle/role/my-role \
+vault write auth/approle/role/my-role \
     secret_id_ttl=10m \
     token_num_uses=10 \
     token_ttl=20m \
